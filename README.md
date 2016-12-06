@@ -1,7 +1,7 @@
 # Skytells API PHP SDK & Explorer
 by Skytells, Inc.
 
-**What is Skytells PM?**
+**What is Skytells API?**
 
 _Skytells API is the primary way for developers to read and write to the Skytells.
 You can Send SMS and Outbound Voice Calls or even WhatsApp messages using Skytells API.
@@ -146,7 +146,7 @@ You can perform GET on every outgoing/sent SMS on your account by calling this m
 ```php
 require("Library/Client.php");
 $Client = new SkytellsClient("APIKEY");
-echo $Client->getSMSHistory("SMSID");
+echo $Client->getSMSHistory();
 ```
 
 
@@ -179,13 +179,13 @@ echo $Client->getCallDetails("SMSID");
 
 
 
-### Receiving List of Sent SMS(s)
+### Receiving List of Sent Voice Call(s)
 You can perform GET on every outgoing/sent call on your account by calling this method.
 
 ```php
 require("Library/Client.php");
 $Client = new SkytellsClient("APIKEY");
-echo $Client->getCallsHistory("SMSID");
+echo $Client->getCallsHistory();
 ```
 
 
@@ -204,4 +204,54 @@ You can manage/view your Skytells account using the following endpoints
 
 
 
+#### Managing Profile using the API
+You can perform fetch request on your profile normally by calling
 
+```php
+echo $Client->Get("me");
+```
+
+To Get Your UserID
+
+```php
+echo $Client->getUserID();
+```
+
+
+To Get Your UserName
+
+```php
+echo $Client->getUserName();
+```
+
+
+
+You can fetch all sent messages by calling this method
+* Please note : You can perform this action on other profile if you have granted permission : ( user_sms )
+* Normally, You can only perform this call on your profile.
+
+```php
+echo $Client->getSMSHistory();
+```
+
+
+You can fetch all created transactions by calling this method
+* Please note : You can perform this action on other profile if you have granted permission : ( user_transactions )
+* Normally, You can only perform this call on your profile.
+
+```php
+echo $Client->getTransactions("me");
+```
+
+
+In order to get the list of sent voice call, Please call this method
+```php
+echo $Client->getCallsHistory("me");
+```
+
+
+To get all Skytells PM licenses you own, Please perform this call
+
+```php
+echo $Client->Get("me/licenses");
+```
