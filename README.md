@@ -174,7 +174,7 @@ You can perform GET on every outgoing/sent Call on your account by calling this 
 ```php
 require("Library/Client.php");
 $Client = new SkytellsClient("APIKEY");
-echo $Client->getCallDetails("SMSID");
+echo $Client->getCallDetails("CALLID");
 ```
 
 
