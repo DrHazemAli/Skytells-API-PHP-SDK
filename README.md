@@ -29,7 +29,8 @@ require("Library/Client.php");
 Please refere to Skytells Developer Console to learn how to use Skytells API by visiting these links below.
 - [Create an Skytells Account](https://www.skytells.net/signup)
 - [Skytells Developer Console](https://developers.skytells.net)
-
+- [SMS API](https://developers.skytells.net/sms-api-overview/?node=sms-api-overview)
+- [Voice Calls API](https://developers.skytells.net/index.php?node=send-tts-call)
 
 
 
@@ -70,6 +71,8 @@ You can do it by two different methods.
 
 
 
+## Using Skytells API
+Here's what you can do step by step..
 
 ### Make Your First Call
 After including the Client Class File into your script, You can perform your first API Call by calling this method
@@ -84,6 +87,30 @@ echo $Client->Get("me");
 
 By calling this method, The API sends your account details into your script as JSON Object.
 
+Or simply you can authenticate your account/user using this method after passing the API key
+
+```php
+require("Library/Client.php");
+
+$Client = new SkytellsClient("APIKEY");
+
+echo $Client->getMyDetails();
+```
+
+By calling this method, The server will return the account's basic information such as
+- ID
+- Name
+- E-Mail
+- Mobile
+- List of Transactions
+- List of Sent SMS(s)
+- List of Sent Voice Calls
+- List of [Skytells PM](https://www.skytells.net/features) Licenses
+
+
+
+Alright, Looks good?
+Let's move on and send an SMS...
 
 ## SMS API
 
