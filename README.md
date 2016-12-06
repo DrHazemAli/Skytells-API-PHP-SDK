@@ -15,6 +15,7 @@ The Skytells API has multiple versions available, read about what has changed an
 - See ( Reference ) Down Below
 
 **How to get started?**
+
 1.Clone the SDK
 
 2.Include the main class file on your script by calling :
