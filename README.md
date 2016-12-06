@@ -27,8 +27,8 @@ require("Library/Client.php");
 
 ### Reference
 Please refere to Skytells Developer Console to learn how to use Skytells API by visiting these links below.
-1. [Create an Skytells Account](https://www.skytells.net/signup)
-2. [Skytells Developer Console](https://developers.skytells.net)
+- [Create an Skytells Account](https://www.skytells.net/signup)
+- [Skytells Developer Console](https://developers.skytells.net)
 
 
 
