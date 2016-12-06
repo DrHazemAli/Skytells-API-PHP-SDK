@@ -16,15 +16,15 @@ The Skytells API has multiple versions available, read about what has changed an
 
 **How to get started?**
 
-1.Clone the SDK
+1. Clone the SDK
 
-2.Include the main class file on your script by calling :
+2. Include the main class file on your script by calling :
 
 ```php
 require("Library/Client.php");
 ```
 
-3.Start Making Api Calls
+3. Start Making Api Calls
 
 ### Reference
 Please refere to Skytells Developer Console to learn how to use Skytells API by visiting these links below.
@@ -188,6 +188,19 @@ $Client = new SkytellsClient("APIKEY");
 echo $Client->getCallsHistory("SMSID");
 ```
 
+
+
+
+
+## Account Management
+You can manage/view your Skytells account using the following endpoints
+
+### Profile Endpoints
+- me
+- me/sms
+- me/transactions
+- me/ttscalls
+- me/licenses
 
 
 
