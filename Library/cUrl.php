@@ -43,7 +43,9 @@ class WebHandler
             CURLOPT_URL => "https://v.skytells.net/".$Query."?key=$this->APIKEY",
             CURLOPT_USERAGENT => 'SkytellsClint',
             CURLOPT_POST => 1,
-            CURLOPT_POSTFIELDS => $Params
+            CURLOPT_POSTFIELDS => $Params,
+            CURLOPT_SSL_VERIFYHOST => 0,
+            CURLOPT_SSL_VERIFYPEER => 0
         ));
         
         $resp = curl_exec($curl);
