@@ -115,6 +115,33 @@ Let's move on and send an SMS...
 
 ## SMS API
 
+The Skytells SMS API one of the bestest backend SMS platforms, Which you can send an international mobile SMS with low rates. 
+
+**Edges**
+- Registering SenderID
+- Send SMS
+- Get an sent SMS Details
+- Get All Sent SMS(s)
+
+
+### Registering SenderID
+The SenderID is the main identifier for each SMS you send
+You must register your senderID before sending or you can use
+By default the senderID ("Skytells") will be registered.
+
+In order to register a new SenderID, Please perform this call.
+
+```php
+require("Library/Client.php");
+
+$Client = new SkytellsClient("APIKEY");
+
+echo $Client->registerSenderID("{YOURSENDERID}";
+```
+
+After then, Your SenderID ("Sender Name") will be registered on Skytells SMS API.
+Now Everything is made up!, Let's Send our first SMS.
+
 ### Sending SMS
 If you have enough credit to cover the SMS, You can send it right away by calling this function.
 
@@ -153,6 +180,13 @@ echo $Client->getSMSHistory();
 
 ## Voice Calls API
 
+The Skytells Pre-Spoken Calls API one of the bestest backend TTS-Messages platforms, Which you can send an international mobile voice calls with low rates. 
+
+**Edges**
+- Sending TTS Calls
+- Get an outgoing Call
+- Get All Sent SMS(s)
+- 
 ### Sending a Wirtten Voice Call
 If you have enough credit to cover the Mobile Call, You can send it right away by calling this function.
 
