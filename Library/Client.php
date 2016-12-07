@@ -189,7 +189,42 @@ require(__DIR__."/cUrl.php");
         {
             return $this->WebHandler->MakeRequest("$User/transactions", array("limit" => "50"));
         }
-        
+     
+     /* ----- REGISTER SENDER ID ----- *
+     * This function let you register your sender id.
+     * The SenderID is the main identifier for each SMS you send
+     * You must register your senderID before sending or you can use
+     * The default senderID ("Skytells").
+     * WARNING : By registering a sender id you may be charged for $0.50
+     */
+     function registerSenderID($SENDER)
+     {
+       try
+       {
+         if (empty($SENDER) || !isset($SENDER))
+         {
+          return $this->Responder->Push(false, "Cannot register empty SenderID", "registerSenderID()");
+         }
+         else
+         {
+          $res = $this->Post("sms/addsender", array("sender" => $SENDER));
+          if (!empty($res))
+           {
+            return $res;
+           }
+           else
+           {
+            return $this->Responder->Push(false, "Cannot Perform this action at the moment", "registerSenderID");
+           }
+         }
+       }
+       catch(Exception $e)
+        {
+         return "Skytells Client Throwed an Exception : $e";
+        }
+     }
+     
+     
      
      /* ----- SEND SMS ------ *
      * This Action requires at least $1.00 Skytells Credit.
