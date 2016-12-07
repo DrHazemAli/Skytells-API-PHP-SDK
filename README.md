@@ -185,8 +185,9 @@ The Skytells Pre-Spoken Calls API one of the bestest backend TTS-Messages platfo
 **Edges**
 - Sending TTS Calls
 - Get an outgoing Call
-- Get All Sent SMS(s)
-- 
+- Get All Sent Call(s)
+
+
 ### Sending a Wirtten Voice Call
 If you have enough credit to cover the Mobile Call, You can send it right away by calling this function.
 
